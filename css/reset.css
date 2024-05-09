@@ -91,7 +91,7 @@ video {
 	border: 0;
 	font-size: 100%;
 	/* font: inherit; */
-	font-family: "Noto Sans TC", "Noto Sans", sans-serif;
+	font-family: "Noto Sans", "Noto Sans TC", sans-serif;
 	color: #000;
 	vertical-align: baseline;
 	text-decoration: none;
@@ -134,5 +134,6 @@ table {
 	border-spacing: 0;
 }
 img {
+	display: block;
 	max-width: 100%;
 }

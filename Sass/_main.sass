@@ -1,12 +1,74 @@
+// container
+$container-padding-top: 120px
+// picture
+$pic-border: 15px
+// text_box
+$text-box-padding-left: 16px
+$text-box-margin-top: 16px
+// title
 $title-size: 28px
 $title-lingheight: 1.2
-$title-tag-color: #3B3B3B
-$describe-tag-size: 16px
-$describe-tag-lingheight: 1.5
-$describe-color: #919191
-$section-tags-margin-top: 24px
-$tag-color: #F1F1F1
-$tag-padding: 4px 12px
-$section-tag-margin-right: 16px
+$title-color: #3B3B3B
 $title-padding-bottom: 8px
-$section-margin-top: 24px
+$title-weight: 700
+// describe
+$describe-size: 16px
+$describe-lingheight: 1.5
+$describe-weight: 400
+$describe-color: #919191
+// tags
+$tags-margin-top: 24px
+// tag
+$tag-color: #3B3B3B
+$tag-size: 16px
+$tag-lingheight: 1.5
+$tag-weight: 400
+$tag-bg-color: #F1F1F1
+$tag-padding: 4px 12px
+$tag-margin-right: 16px
+
+
+// *
+//     outline: 1px solid black
+
+.wrap
+    padding-top: $container-padding-top
+    width: 100vw
+.container
+    max-width: 1296px
+    margin: 0 auto
+.card-list
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+.card
+    width: 636px
+    height: 618px
+    img
+        border-radius: $pic-border
+.text-box
+    margin-top: $text-box-margin-top
+    padding-left: $text-box-padding-left
+.title
+    font-size: $title-size
+    color: $title-color
+    line-height: $title-lingheight
+    padding-bottom: $title-padding-bottom
+    font-weight: $title-weight
+.describe
+    font-size: $describe-size
+    color: $describe-color
+    line-height: $describe-lingheight
+    font-weight: $describe-weight
+.tags
+    margin-top: $tags-margin-top
+    display: flex
+.tag
+    font-size: $tag-size
+    font-weight: $tag-weight
+    background-color: $tag-bg-color
+    color: $tag-color
+    line-height: $tag-lingheight
+    padding: $tag-padding
+    margin-right: $tag-margin-right
+    border-radius: 16px

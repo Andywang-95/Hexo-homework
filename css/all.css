@@ -1,11 +1,237 @@
-.wrap {
-  padding-top: 120px;
-  width: 100vw;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+/* http://meyerweb.com/eric/tools/css/reset/ 
+ * * v2.0 | 20110126
+ * * License: none (public domain) */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, button, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  /* font: inherit; */
+  font-family: "Noto Sans", "Noto Sans TC", sans-serif;
+  color: #000;
+  vertical-align: baseline;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+html {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.nav {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 32px 0;
+}
+.nav-logo {
+  align-self: center;
+  position: absolute;
+  left: 0;
+  top: 35px;
+  bottom: 35.74px;
+}
+
+.menu {
+  display: flex;
+}
+
+.item {
+  margin: 0 20px;
+  position: relative;
+}
+@media (max-width: 992px) {
+  .item {
+    padding: 0;
+  }
+}
+.item a {
+  display: block;
+  padding: 4px 8px;
+  line-height: 1.5;
+  position: relative;
+}
+.item a::before {
+  display: none;
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #919191;
+  border-right: 1px solid #919191;
+  top: 0;
+  right: 0;
+}
+.item a::after {
+  display: none;
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-bottom: 1px solid #919191;
+  border-right: 1px solid #919191;
+  bottom: 0;
+  right: 0;
+}
+.item a:hover:before {
+  display: block;
+}
+.item a:hover:after {
+  display: block;
+}
+.item::before {
+  display: none;
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #919191;
+  border-left: 1px solid #919191;
+  top: 0;
+  left: 0;
+}
+.item::after {
+  display: none;
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-bottom: 1px solid #919191;
+  border-left: 1px solid #919191;
+  bottom: 0;
+  left: 0;
+}
+.item:hover:before {
+  display: block;
+}
+.item:hover:after {
+  display: block;
+}
+
+.banner {
+  padding: 80px 0;
+  background-color: #fafafa;
+}
+
+.slogan-block {
+  max-width: 670px;
+  margin: 0 auto;
+  position: relative;
+  padding: 59px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.slogan-block p {
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.2;
+  z-index: 1;
+}
+.slogan-block p span {
+  display: inline-block;
+  position: relative;
+}
+.slogan-block p:nth-child(2) {
+  margin-bottom: 16px;
+}
+
+.underline {
+  position: absolute;
+  display: inline-block;
+  right: -16px;
+  bottom: -2px;
+  z-index: -1;
+}
+
+.quote-l {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.quote-r {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.exp-block {
+  width: 676px;
+  margin: 0 auto;
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.exp {
+  width: 298px;
+  margin: 0 20px;
+}
+.exp p {
+  text-align: center;
+  line-height: 1.5;
+}
+
+.exp-title {
+  position: relative;
+  margin-bottom: 12px;
+}
+.exp-title::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 24px;
+  border-bottom: 2px solid #c1c1c1;
+  top: 24px;
+  left: 137px;
 }
 
 .container {
-  max-width: 1296px;
+  max-width: 1300px;
   margin: 0 auto;
+  padding: 120px 12px 0;
 }
 
 .card-list {
@@ -15,11 +241,18 @@
 }
 
 .card {
-  width: 636px;
-  height: 618px;
+  width: 49%;
+  height: auto;
+  margin-bottom: 80px;
 }
 .card img {
+  border: 1px solid #f1f1f1;
   border-radius: 15px;
+}
+.card li, .card p, .card h2 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .text-box {
@@ -36,10 +269,8 @@
 }
 
 .describe {
-  font-size: 16px;
   color: #919191;
   line-height: 1.5;
-  font-weight: 400;
 }
 
 .tags {
@@ -48,12 +279,84 @@
 }
 
 .tag {
-  font-size: 16px;
-  font-weight: 400;
   background-color: #F1F1F1;
   color: #3B3B3B;
   line-height: 1.5;
   padding: 4px 12px;
   margin-right: 16px;
   border-radius: 16px;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 120px;
+}
+
+.page {
+  font-size: 24px;
+  line-height: 1.5;
+  padding: 2px 13px;
+  margin: 0 8px;
+}
+.page:hover {
+  background-color: #1e1e1e;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.footer {
+  height: auto;
+  background-image: url(../img/footer-bg-lg.png);
+  background-size: cover;
+}
+.footer-container {
+  margin: 0 auto;
+  padding: 80px 12px;
+  max-width: 1300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+.contact-text {
+  line-height: 1.5;
+}
+.contact-email {
+  line-height: 1.2;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px 0;
+}
+.social-item {
+  display: block;
+  width: 306px;
+  padding: 8px 24px;
+  display: flex;
+  border: 1px solid #c1c1c1;
+  border-radius: 8px;
+}
+.social-text {
+  display: flex;
+  align-items: center;
+  margin-left: 13px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.from {
+  background-color: #000;
+}
+.from p {
+  color: #fff;
 }/*# sourceMappingURL=all.css.map */

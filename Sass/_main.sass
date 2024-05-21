@@ -1,69 +1,246 @@
-// container
-$container-padding-top: 120px
-// picture
-$pic-border: 15px
-// text_box
-$text-box-padding-left: 16px
-$text-box-margin-top: 16px
-// title
-$title-size: 28px
-$title-lingheight: 1.2
-$title-color: #3B3B3B
-$title-padding-bottom: 8px
-$title-weight: 700
-// describe
-$describe-lingheight: 1.5
-
-$describe-color: #919191
-// tags
-$tags-margin-top: 24px
-// tag
-$tag-color: #3B3B3B
-$tag-lingheight: 1.5
-$tag-bg-color: #F1F1F1
-$tag-padding: 4px 12px
-$tag-margin-right: 16px
-
-
-// *
-//     outline: 1px solid black
-
-.wrap
-    padding-top: $container-padding-top
-    width: 100vw
-.container
-    max-width: 1296px
+@import variable
+@mixin pad
+    @media (max-width: 992px)
+        @content    
+@mixin phone
+    @media (max-width: 375px)
+        @content    
+*
+    // outline: 1px solid black
+html
+    max-width: 1920px
     margin: 0 auto
+// 頁首
+.nav
+    max-width: $web-width
+    margin: 0 auto
+    display: flex
+    justify-content: center
+    position: relative
+    padding: $nav-p
+    &-logo
+        align-self: center
+        position: absolute
+        left: 0
+        top: 35px
+        bottom: 35.74px
+.menu
+    display: flex
+.item
+    margin: $item-m
+    position: relative
+    @include pad
+        padding: 0
+    a
+        display: block
+        padding: $item_a-p
+        line-height: $menu-lh
+        position: relative
+        &::before
+            display: none
+            position: absolute
+            content: ''
+            width: $item-coner-width
+            height: $item-coner-width
+            border-top: $item-coner-b
+            border-right: $item-coner-b
+            top: 0
+            right: 0
+        &::after
+            display: none
+            position: absolute
+            content: ''
+            width: $item-coner-width
+            height: $item-coner-width
+            border-bottom: $item-coner-b
+            border-right: $item-coner-b
+            bottom: 0
+            right: 0
+        &:hover:before
+            display: block
+        &:hover:after
+            display: block
+    &::before
+        display: none
+        position: absolute
+        content: ''
+        width: $item-coner-width
+        height: $item-coner-width
+        border-top: $item-coner-b
+        border-left: $item-coner-b
+        top: 0
+        left: 0
+    &::after
+        display: none
+        position: absolute
+        content: ''
+        width: $item-coner-width
+        height: $item-coner-width
+        border-bottom: $item-coner-b
+        border-left: $item-coner-b
+        bottom: 0
+        left: 0
+    &:hover:before
+            display: block
+    &:hover:after
+            display: block
+// 橫幅
+.banner
+    padding: $banner-p
+    background-color: $banner-bgc
+.slogan-block
+    max-width: $slogan-width
+    // height: 192px
+    margin: 0 auto
+    position: relative
+    padding: 59px 0
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    p
+        text-align: center
+        font-size: $slogan-fz
+        line-height: $slogan-lh
+        z-index: 1
+        span
+            display: inline-block
+            position: relative
+    p:nth-child(2)
+        margin-bottom: $slogan-gap
+.underline
+    position: absolute
+    display: inline-block
+    right: -16px
+    bottom: -2px
+    z-index: -1
+.quote-l
+    position: absolute
+    top: 0
+    left: 0
+.quote-r
+    position: absolute
+    bottom: 0
+    right: 0
+.exp-block
+    width: 676px
+    margin: 0 auto
+    margin-top: 24px
+    display: flex
+    justify-content: space-between
+.exp
+    width: 298px
+    margin: 0 20px
+    p
+        text-align: center
+        line-height: $exp-lh
+.exp-title
+    position: relative
+    margin-bottom: 12px
+    &::before
+        position: absolute
+        content: ""
+        height: 2px
+        width: 24px
+        border-bottom: 2px solid #c1c1c1
+        top: 24px
+        left: 137px
+// 中間主體
+.container
+    max-width: $web-width
+    margin: 0 auto
+    padding: $container-p
 .card-list
     display: flex
     flex-wrap: wrap
     justify-content: space-between
 .card
-    width: 636px
-    height: 618px
+    width: 49%
+    height: auto
+    margin-bottom: 80px
     img
-        border-radius: $pic-border
+        border: $pic-b
+        border-radius: $pic-br
+    li, p, h2
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
 .text-box
-    margin-top: $text-box-margin-top
-    padding-left: $text-box-padding-left
+    margin-top: $text-box-mt
+    padding-left: $text-box-pl
 .title
-    font-size: $title-size
-    color: $title-color
-    line-height: $title-lingheight
-    padding-bottom: $title-padding-bottom
+    font-size: $title-fz
+    color: $title-c
+    line-height: $title-lh
+    padding-bottom: $title-pb
     font-weight: $title-weight
 .describe
-    font-size: $describe-size
-    color: $describe-color
-    line-height: $describe-lingheight
+    color: $describe-c
+    line-height: $describe-lh
 .tags
-    margin-top: $tags-margin-top
+    margin-top: $tags-mt
     display: flex
 .tag
-    font-size: $tag-size
-    background-color: $tag-bg-color
-    color: $tag-color
-    line-height: $tag-lingheight
+    background-color: $tag-bgc
+    color: $tag-c
+    line-height: $tag-lh
     padding: $tag-padding
-    margin-right: $tag-margin-right
-    border-radius: 16px
+    margin-right: $tag-mr
+    border-radius: $tag-br
+// 翻頁區域
+.pages
+    // width: 168px
+    display: flex
+    justify-content: center
+    margin: $pages-m
+.page
+    font-size: $page-fz
+    line-height: $page-lh
+    padding: $page-p
+    margin: $page-m
+    &:hover
+        background-color: $page-hover-bgc
+        color: $page-hover-c
+        border-radius: $page-hover-br
+.footer
+    height: auto
+    background-image: url(../img/footer-bg-lg.png)
+    background-size: cover
+    &-container
+        margin: 0 auto
+        padding: $footer-container-p
+        max-width: $web-width
+        display: flex
+        justify-content: space-between
+        align-items: center
+.contact
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    gap: $contact-g
+    &-text
+        line-height: $contact-text-lh
+    &-email
+        line-height: $contact-email-lh
+.social
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    gap: $social-g
+    &-item
+        display: block
+        width: 306px
+        // margin: $social-item-m
+        padding: $social-item-p
+        display: flex
+        border: $social-item-b
+        border-radius: $social-item-br
+    &-text
+        display: flex
+        align-items: center
+        margin-left: $social-text-ml
+        font-size: $social-text-fz
+        line-height: $social-text-lh
+.from
+    background-color: #000
+    p
+        color: #fff

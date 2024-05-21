@@ -65,6 +65,11 @@ html {
   position: relative;
   padding: 32px 0;
 }
+@media (max-width: 767px) {
+  .nav {
+    flex-direction: column;
+  }
+}
 .nav-logo {
   align-self: center;
   position: absolute;
@@ -72,18 +77,30 @@ html {
   top: 35px;
   bottom: 35.74px;
 }
+@media (max-width: 767px) {
+  .nav-logo {
+    position: static;
+    align-self: start;
+  }
+}
 
 .menu {
   display: flex;
+}
+@media (max-width: 767px) {
+  .menu {
+    align-self: center;
+  }
 }
 
 .item {
   margin: 0 20px;
   position: relative;
 }
-@media (max-width: 992px) {
+@media (max-width: 540px) {
   .item {
-    padding: 0;
+    margin: 0 10px;
+    writing-mode: vertical-lr;
   }
 }
 .item a {
@@ -91,6 +108,12 @@ html {
   padding: 4px 8px;
   line-height: 1.5;
   position: relative;
+}
+@media (max-width: 540px) {
+  .item a {
+    -moz-text-align-last: justify;
+         text-align-last: justify;
+  }
 }
 .item a::before {
   display: none;
@@ -198,7 +221,7 @@ html {
 }
 
 .exp-block {
-  width: 676px;
+  max-width: 676px;
   margin: 0 auto;
   margin-top: 24px;
   display: flex;
@@ -225,7 +248,7 @@ html {
   width: 24px;
   border-bottom: 2px solid #c1c1c1;
   top: 24px;
-  left: 137px;
+  left: calc((100% - 24px) / 2);
 }
 
 .container {

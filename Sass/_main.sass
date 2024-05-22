@@ -23,6 +23,11 @@ html
     padding: $nav-p
     @include big-pad
         flex-direction: column
+    @include phone
+        padding: 0 12px
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
     &-logo
         align-self: center
         position: absolute
@@ -32,11 +37,21 @@ html
         @include big-pad
             position: static
             align-self: start
-        
+        @include phone
+            position: static
+            align-self: start
+.material-symbols-outlined
+    font-size: 40px
+.menu-btn
+    display: none
+    @include phone
+        display: inline-block
 .menu
     display: flex
     @include big-pad
         align-self: center
+    @include phone
+        display: none
 .item
     margin: $item-m
     position: relative
@@ -49,9 +64,9 @@ html
         line-height: $menu-lh
         position: relative
         @include small-pad
-            text-align-last: justify
-        &::before
-            display: none
+            text-align-last: center
+        &:hover:before
+            display: block
             position: absolute
             content: ''
             width: $item-coner-width
@@ -60,8 +75,8 @@ html
             border-right: $item-coner-b
             top: 0
             right: 0
-        &::after
-            display: none
+        &:hover:after
+            display: block
             position: absolute
             content: ''
             width: $item-coner-width
@@ -70,12 +85,8 @@ html
             border-right: $item-coner-b
             bottom: 0
             right: 0
-        &:hover:before
-            display: block
-        &:hover:after
-            display: block
-    &::before
-        display: none
+    &:hover:before
+        display: block
         position: absolute
         content: ''
         width: $item-coner-width
@@ -84,8 +95,8 @@ html
         border-left: $item-coner-b
         top: 0
         left: 0
-    &::after
-        display: none
+    &:hover:after
+        display: block
         position: absolute
         content: ''
         width: $item-coner-width
@@ -94,14 +105,12 @@ html
         border-left: $item-coner-b
         bottom: 0
         left: 0
-    &:hover:before
-            display: block
-    &:hover:after
-            display: block
 // 橫幅
 .banner
     padding: $banner-p
     background-color: $banner-bgc
+    @include phone
+        padding-top: 0
 .slogan-block
     max-width: $slogan-width
     // height: 192px
@@ -111,11 +120,18 @@ html
     display: flex
     flex-direction: column
     justify-content: space-between
+    @include phone
+        max-width: 300px
+        padding: 40px 0
+        align-items: center
     p
         text-align: center
         font-size: $slogan-fz
         line-height: $slogan-lh
         z-index: 1
+        @include phone
+            font-size: 20px
+            line-height: 1.5
         span
             display: inline-block
             position: relative
@@ -131,16 +147,22 @@ html
     position: absolute
     top: 0
     left: 0
+    @include phone
+        position: static
 .quote-r
     position: absolute
     bottom: 0
     right: 0
+    @include phone
+        display: none
 .exp-block
     max-width: 676px
-    margin: 0 auto
-    margin-top: 24px
+    margin: 24px auto 0
     display: flex
     justify-content: space-between
+    @include phone
+        margin: 0 auto
+        display: block
 .exp
     width: 298px
     margin: 0 20px
@@ -164,21 +186,34 @@ html
     max-width: $web-width
     margin: 0 auto
     padding: $container-p
+    @include phone
+        padding-top: 80px
 .card-list
     display: flex
     flex-wrap: wrap
     justify-content: space-between
+    @include phone
+        display: block
 .card
     width: 49%
     height: auto
     margin-bottom: 80px
+    @include phone
+        width: 100%
     img
         border: $pic-b
         border-radius: $pic-br
+        @include phone
+            border: 0.55px
+            border-radius: 4px
     li, p, h2
         overflow: hidden
         white-space: nowrap
         text-overflow: ellipsis
+        @include phone
+            overflow: visible
+            white-space: normal
+            text-overflow: clip
 .text-box
     margin-top: $text-box-mt
     padding-left: $text-box-pl
@@ -188,12 +223,16 @@ html
     line-height: $title-lh
     padding-bottom: $title-pb
     font-weight: $title-weight
+    @include phone
+        font-size: 20px
 .describe
     color: $describe-c
     line-height: $describe-lh
 .tags
     margin-top: $tags-mt
     display: flex
+    @include phone
+        margin-top: 16px
 .tag
     background-color: $tag-bgc
     color: $tag-c
@@ -201,6 +240,8 @@ html
     padding: $tag-padding
     margin-right: $tag-mr
     border-radius: $tag-br
+    @include phone
+        margin-right: 8px
 // 翻頁區域
 .pages
     // width: 168px

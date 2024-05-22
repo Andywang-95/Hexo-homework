@@ -70,6 +70,14 @@ html {
     flex-direction: column;
   }
 }
+@media (max-width: 375px) {
+  .nav {
+    padding: 0 12px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 .nav-logo {
   align-self: center;
   position: absolute;
@@ -83,6 +91,25 @@ html {
     align-self: start;
   }
 }
+@media (max-width: 375px) {
+  .nav-logo {
+    position: static;
+    align-self: start;
+  }
+}
+
+.material-symbols-outlined {
+  font-size: 40px;
+}
+
+.menu-btn {
+  display: none;
+}
+@media (max-width: 375px) {
+  .menu-btn {
+    display: inline-block;
+  }
+}
 
 .menu {
   display: flex;
@@ -90,6 +117,11 @@ html {
 @media (max-width: 767px) {
   .menu {
     align-self: center;
+  }
+}
+@media (max-width: 375px) {
+  .menu {
+    display: none;
   }
 }
 
@@ -111,40 +143,34 @@ html {
 }
 @media (max-width: 540px) {
   .item a {
-    -moz-text-align-last: justify;
-         text-align-last: justify;
+    -moz-text-align-last: center;
+         text-align-last: center;
   }
-}
-.item a::before {
-  display: none;
-  position: absolute;
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-top: 1px solid #919191;
-  border-right: 1px solid #919191;
-  top: 0;
-  right: 0;
-}
-.item a::after {
-  display: none;
-  position: absolute;
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-bottom: 1px solid #919191;
-  border-right: 1px solid #919191;
-  bottom: 0;
-  right: 0;
 }
 .item a:hover:before {
   display: block;
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #919191;
+  border-right: 1px solid #919191;
+  top: 0;
+  right: 0;
 }
 .item a:hover:after {
   display: block;
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-bottom: 1px solid #919191;
+  border-right: 1px solid #919191;
+  bottom: 0;
+  right: 0;
 }
-.item::before {
-  display: none;
+.item:hover:before {
+  display: block;
   position: absolute;
   content: "";
   width: 8px;
@@ -154,8 +180,8 @@ html {
   top: 0;
   left: 0;
 }
-.item::after {
-  display: none;
+.item:hover:after {
+  display: block;
   position: absolute;
   content: "";
   width: 8px;
@@ -164,17 +190,16 @@ html {
   border-left: 1px solid #919191;
   bottom: 0;
   left: 0;
-}
-.item:hover:before {
-  display: block;
-}
-.item:hover:after {
-  display: block;
 }
 
 .banner {
   padding: 80px 0;
   background-color: #fafafa;
+}
+@media (max-width: 375px) {
+  .banner {
+    padding-top: 0;
+  }
 }
 
 .slogan-block {
@@ -186,11 +211,24 @@ html {
   flex-direction: column;
   justify-content: space-between;
 }
+@media (max-width: 375px) {
+  .slogan-block {
+    max-width: 300px;
+    padding: 40px 0;
+    align-items: center;
+  }
+}
 .slogan-block p {
   text-align: center;
   font-size: 24px;
   line-height: 1.2;
   z-index: 1;
+}
+@media (max-width: 375px) {
+  .slogan-block p {
+    font-size: 20px;
+    line-height: 1.5;
+  }
 }
 .slogan-block p span {
   display: inline-block;
@@ -213,19 +251,34 @@ html {
   top: 0;
   left: 0;
 }
+@media (max-width: 375px) {
+  .quote-l {
+    position: static;
+  }
+}
 
 .quote-r {
   position: absolute;
   bottom: 0;
   right: 0;
 }
+@media (max-width: 375px) {
+  .quote-r {
+    display: none;
+  }
+}
 
 .exp-block {
   max-width: 676px;
-  margin: 0 auto;
-  margin-top: 24px;
+  margin: 24px auto 0;
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 375px) {
+  .exp-block {
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 .exp {
@@ -256,11 +309,21 @@ html {
   margin: 0 auto;
   padding: 120px 12px 0;
 }
+@media (max-width: 375px) {
+  .container {
+    padding-top: 80px;
+  }
+}
 
 .card-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+@media (max-width: 375px) {
+  .card-list {
+    display: block;
+  }
 }
 
 .card {
@@ -268,14 +331,32 @@ html {
   height: auto;
   margin-bottom: 80px;
 }
+@media (max-width: 375px) {
+  .card {
+    width: 100%;
+  }
+}
 .card img {
   border: 1px solid #f1f1f1;
   border-radius: 15px;
+}
+@media (max-width: 375px) {
+  .card img {
+    border: 0.55px;
+    border-radius: 4px;
+  }
 }
 .card li, .card p, .card h2 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+@media (max-width: 375px) {
+  .card li, .card p, .card h2 {
+    overflow: visible;
+    white-space: normal;
+    text-overflow: clip;
+  }
 }
 
 .text-box {
@@ -290,6 +371,11 @@ html {
   padding-bottom: 8px;
   font-weight: 700;
 }
+@media (max-width: 375px) {
+  .title {
+    font-size: 20px;
+  }
+}
 
 .describe {
   color: #919191;
@@ -300,6 +386,11 @@ html {
   margin-top: 24px;
   display: flex;
 }
+@media (max-width: 375px) {
+  .tags {
+    margin-top: 16px;
+  }
+}
 
 .tag {
   background-color: #F1F1F1;
@@ -308,6 +399,11 @@ html {
   padding: 4px 12px;
   margin-right: 16px;
   border-radius: 16px;
+}
+@media (max-width: 375px) {
+  .tag {
+    margin-right: 8px;
+  }
 }
 
 .pages {

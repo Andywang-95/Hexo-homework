@@ -70,12 +70,11 @@ html {
     flex-direction: column;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 540px) {
   .nav {
     padding: 0 12px;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
   }
 }
 .nav-logo {
@@ -85,16 +84,10 @@ html {
   top: 35px;
   bottom: 35.74px;
 }
-@media (max-width: 767px) {
+@media (max-width: 540px) {
   .nav-logo {
-    position: static;
-    align-self: start;
-  }
-}
-@media (max-width: 375px) {
-  .nav-logo {
-    position: static;
-    align-self: start;
+    top: 0;
+    bottom: auto;
   }
 }
 
@@ -105,9 +98,33 @@ html {
 .menu-btn {
   display: none;
 }
-@media (max-width: 375px) {
+@media (max-width: 540px) {
   .menu-btn {
-    display: inline-block;
+    display: block;
+  }
+  .menu-btn:hover {
+    color: #919191;
+  }
+  .menu-btn:active {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+  }
+}
+
+.close-btn {
+  display: none;
+}
+@media (max-width: 540px) {
+  .close-btn {
+    background-color: #000;
+    color: #fff;
+  }
+  .close-btn:hover {
+    background-color: rgba(145, 145, 145, 0.2);
+    color: #000;
+  }
+  .close-btn:active {
+    background-color: #919191;
   }
 }
 
@@ -116,12 +133,20 @@ html {
 }
 @media (max-width: 767px) {
   .menu {
-    align-self: center;
+    align-self: flex-end;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 540px) {
   .menu {
     display: none;
+    width: 70%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8156862745);
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    position: absolute;
+    top: 40px;
+    z-index: 10;
   }
 }
 
@@ -129,10 +154,9 @@ html {
   margin: 0 20px;
   position: relative;
 }
-@media (max-width: 540px) {
+@media (max-width: 767px) {
   .item {
     margin: 0 10px;
-    writing-mode: vertical-lr;
   }
 }
 .item a {
@@ -145,6 +169,8 @@ html {
   .item a {
     -moz-text-align-last: center;
          text-align-last: center;
+    padding: 10px;
+    color: #fff;
   }
 }
 .item a:hover:before {
@@ -273,16 +299,17 @@ html {
   margin: 24px auto 0;
   display: flex;
   justify-content: space-between;
+  gap: 40px;
 }
 @media (max-width: 375px) {
   .exp-block {
-    margin: 0 auto;
+    max-width: 275px;
     display: block;
+    margin: 0 auto;
   }
 }
 
 .exp {
-  width: 298px;
   margin: 0 20px;
 }
 .exp p {
@@ -307,11 +334,11 @@ html {
 .container {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 120px 12px 0;
+  padding: 120px 12px;
 }
 @media (max-width: 375px) {
   .container {
-    padding-top: 80px;
+    padding: 80px 12px;
   }
 }
 
@@ -320,7 +347,7 @@ html {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-@media (max-width: 375px) {
+@media (max-width: 540px) {
   .card-list {
     display: block;
   }
@@ -331,28 +358,34 @@ html {
   height: auto;
   margin-bottom: 80px;
 }
-@media (max-width: 375px) {
+@media (max-width: 540px) {
   .card {
     width: 100%;
+    margin-bottom: 48px;
   }
 }
 .card img {
   border: 1px solid #f1f1f1;
   border-radius: 15px;
 }
-@media (max-width: 375px) {
+@media (max-width: 540px) {
   .card img {
     border: 0.55px;
     border-radius: 4px;
   }
 }
-.card li, .card p, .card h2 {
+.card li {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-@media (max-width: 375px) {
-  .card li, .card p, .card h2 {
+.card p, .card h2 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@media (max-width: 540px) {
+  .card p, .card h2 {
     overflow: visible;
     white-space: normal;
     text-overflow: clip;
@@ -400,7 +433,7 @@ html {
   margin-right: 16px;
   border-radius: 16px;
 }
-@media (max-width: 375px) {
+@media (max-width: 540px) {
   .tag {
     margin-right: 8px;
   }
@@ -409,14 +442,17 @@ html {
 .pages {
   display: flex;
   justify-content: center;
-  margin: 0 auto 120px;
+  gap: 16px;
 }
 
 .page {
+  display: block;
+  text-align: center;
+  width: 40px;
+  height: 40px;
   font-size: 24px;
   line-height: 1.5;
   padding: 2px 13px;
-  margin: 0 8px;
 }
 .page:hover {
   background-color: #1e1e1e;
@@ -429,6 +465,11 @@ html {
   background-image: url(../img/footer-bg-lg.png);
   background-size: cover;
 }
+@media (max-width: 540px) {
+  .footer {
+    background-image: url(../img/footer-bg-sm.png);
+  }
+}
 .footer-container {
   margin: 0 auto;
   padding: 80px 12px;
@@ -437,6 +478,13 @@ html {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 540px) {
+  .footer-container {
+    padding: 40px 12px;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
 
 .contact {
   display: flex;
@@ -444,11 +492,18 @@ html {
   justify-content: space-between;
   gap: 24px;
 }
+@media (max-width: 540px) {
+  .contact {
+    align-items: center;
+  }
+}
 .contact-text {
   line-height: 1.5;
+  color: #3b3b3b;
 }
 .contact-email {
   line-height: 1.2;
+  color: #919191;
 }
 
 .social {
@@ -459,7 +514,7 @@ html {
 }
 .social-item {
   display: block;
-  width: 306px;
+  max-width: 306px;
   padding: 8px 24px;
   display: flex;
   border: 1px solid #c1c1c1;

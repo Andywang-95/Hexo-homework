@@ -13,6 +13,7 @@
 html
     max-width: 1920px
     margin: 0 auto
+
 // 頁首
 .nav
     max-width: $web-width
@@ -23,41 +24,61 @@ html
     padding: $nav-p
     @include big-pad
         flex-direction: column
-    @include phone
+    @include small-pad
         padding: 0 12px
-        flex-direction: row
         justify-content: space-between
-        align-items: center
+        align-items: flex-end
     &-logo
         align-self: center
         position: absolute
         left: 0
         top: 35px
         bottom: 35.74px
-        @include big-pad
-            position: static
-            align-self: start
-        @include phone
-            position: static
-            align-self: start
+        @include small-pad
+            top: 0
+            bottom: auto
 .material-symbols-outlined
     font-size: 40px
 .menu-btn
     display: none
-    @include phone
-        display: inline-block
+    @include small-pad
+        display: block
+        &:hover
+            color: #919191
+        &:active
+            background-color: #00000066
+            color: #fff
+.close-btn
+    display: none
+    @include small-pad
+        background-color: #000
+        color: #fff
+        &:hover
+            background-color: #91919133
+            color: #000
+        &:active
+            background-color: #919191
+        // &:hover + .menu
+        //     background-color: #91919133
 .menu
     display: flex
     @include big-pad
-        align-self: center
-    @include phone
+        align-self: flex-end
+    @include small-pad
         display: none
+        width: 70%
+        padding: 10px
+        background-color: #000000d0
+        border-radius: 5px
+        border-top-right-radius: 0
+        position: absolute
+        top: 40px
+        z-index: 10
 .item
     margin: $item-m
     position: relative
-    @include small-pad
+    @include big-pad
         margin: 0 10px
-        writing-mode: vertical-lr
     a
         display: block
         padding: $item_a-p
@@ -65,6 +86,8 @@ html
         position: relative
         @include small-pad
             text-align-last: center
+            padding: 10px
+            color: #fff
         &:hover:before
             display: block
             position: absolute
@@ -160,11 +183,12 @@ html
     margin: 24px auto 0
     display: flex
     justify-content: space-between
+    gap: 40px
     @include phone
-        margin: 0 auto
+        max-width: 275px
         display: block
+        margin: 0 auto
 .exp
-    width: 298px
     margin: 0 20px
     p
         text-align: center
@@ -187,30 +211,35 @@ html
     margin: 0 auto
     padding: $container-p
     @include phone
-        padding-top: 80px
+        padding: 80px 12px
 .card-list
     display: flex
     flex-wrap: wrap
     justify-content: space-between
-    @include phone
+    @include small-pad
         display: block
 .card
     width: 49%
     height: auto
     margin-bottom: 80px
-    @include phone
+    @include small-pad
         width: 100%
+        margin-bottom: 48px
     img
         border: $pic-b
         border-radius: $pic-br
-        @include phone
+        @include small-pad
             border: 0.55px
             border-radius: 4px
-    li, p, h2
+    li
         overflow: hidden
         white-space: nowrap
         text-overflow: ellipsis
-        @include phone
+    p, h2
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+        @include small-pad
             overflow: visible
             white-space: normal
             text-overflow: clip
@@ -240,19 +269,21 @@ html
     padding: $tag-padding
     margin-right: $tag-mr
     border-radius: $tag-br
-    @include phone
+    @include small-pad
         margin-right: 8px
 // 翻頁區域
 .pages
-    // width: 168px
     display: flex
     justify-content: center
-    margin: $pages-m
+    gap: $pages-gap
 .page
+    display: block
+    text-align: center
+    width: $page-width
+    height: $page-width
     font-size: $page-fz
     line-height: $page-lh
     padding: $page-p
-    margin: $page-m
     &:hover
         background-color: $page-hover-bgc
         color: $page-hover-c
@@ -261,6 +292,8 @@ html
     height: auto
     background-image: url(../img/footer-bg-lg.png)
     background-size: cover
+    @include small-pad
+        background-image: url(../img/footer-bg-sm.png)
     &-container
         margin: 0 auto
         padding: $footer-container-p
@@ -268,15 +301,23 @@ html
         display: flex
         justify-content: space-between
         align-items: center
+        @include small-pad
+            padding: 40px 12px
+            flex-direction: column
+            gap: 40px
 .contact
     display: flex
     flex-direction: column
     justify-content: space-between
     gap: $contact-g
+    @include small-pad
+        align-items: center
     &-text
         line-height: $contact-text-lh
+        color: #3b3b3b
     &-email
         line-height: $contact-email-lh
+        color: #919191
 .social
     display: flex
     flex-direction: column
@@ -284,7 +325,7 @@ html
     gap: $social-g
     &-item
         display: block
-        width: 306px
+        max-width: 306px
         // margin: $social-item-m
         padding: $social-item-p
         display: flex

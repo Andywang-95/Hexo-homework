@@ -231,10 +231,6 @@ html
         @include small-pad
             border: 0.55px
             border-radius: 4px
-    li
-        overflow: hidden
-        white-space: nowrap
-        text-overflow: ellipsis
     p, h2
         overflow: hidden
         white-space: nowrap
@@ -260,6 +256,10 @@ html
 .tags
     margin-top: $tags-mt
     display: flex
+    flex-wrap: wrap
+    gap: $tag-mr
+    @include phone
+        gap: 8px
     @include phone
         margin-top: 16px
 .tag

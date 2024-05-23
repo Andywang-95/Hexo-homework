@@ -374,11 +374,6 @@ html {
     border-radius: 4px;
   }
 }
-.card li {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
 .card p, .card h2 {
   overflow: hidden;
   white-space: nowrap;
@@ -418,6 +413,13 @@ html {
 .tags {
   margin-top: 24px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+@media (max-width: 375px) {
+  .tags {
+    gap: 8px;
+  }
 }
 @media (max-width: 375px) {
   .tags {

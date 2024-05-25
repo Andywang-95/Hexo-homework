@@ -13,15 +13,22 @@
 html
     max-width: 1920px
     margin: 0 auto
+body
+    padding-top: 96px
+    @include small-pad
+        padding-top: 40px
 
 // 頁首
 .nav
-    max-width: $web-width
+    width: 100%
     margin: 0 auto
     display: flex
     justify-content: center
-    position: relative
+    position: fixed
+    top: 0
     padding: $nav-p
+    background-color: #fff
+    z-index: 10
     @include big-pad
         flex-direction: column
     @include small-pad

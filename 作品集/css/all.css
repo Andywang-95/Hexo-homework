@@ -484,12 +484,12 @@ body {
 
 .footer {
   height: auto;
-  background: url(".../img/footer-bg-lg.png");
+  background: url(../../../img/footer-bg-lg.png);
   background-size: cover;
 }
 @media (max-width: 767px) {
   .footer {
-    background: url(".../img/footer-bg-sm.png");
+    background: url(../../../img/footer-bg-sm.png);
   }
 }
 .footer-container {

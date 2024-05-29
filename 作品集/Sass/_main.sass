@@ -1,16 +1,3 @@
-@import variable
-@mixin pc-rwd
-    @media (max-width: 1300px)
-        @content    
-@mixin big-pad
-    @media (max-width: 767px)
-        @content    
-@mixin small-pad
-    @media (max-width: 540px)
-        @content    
-@mixin phone
-    @media (max-width: 375px)
-        @content    
 *
     // outline: 1px solid black
 html
@@ -18,7 +5,7 @@ html
     margin: 0 auto
 body
     padding-top: 96px
-    @include small-pad
+    @include pad
         padding-top: 40px
 
 // 頁首
@@ -36,9 +23,9 @@ body
     z-index: 10
     @include pc-rwd
         width: 100%
-    @include big-pad
+    @include pad
         flex-direction: column
-    @include small-pad
+    @include pad
         padding: 0 12px
         justify-content: space-between
         align-items: flex-end
@@ -48,14 +35,14 @@ body
         left: 12px
         top: 35px
         bottom: 35.74px
-        @include small-pad
+        @include pad
             top: 0
             bottom: auto
 .material-symbols-outlined
     font-size: 40px
 .menu-btn
     display: none
-    @include small-pad
+    @include pad
         display: block
         &:hover
             color: #919191
@@ -64,7 +51,7 @@ body
             color: #fff
 .close-btn
     display: none
-    @include small-pad
+    @include pad
         background-color: #000
         color: #fff
         &:hover
@@ -74,9 +61,9 @@ body
             background-color: #919191
 .menu
     display: flex
-    @include big-pad
+    @include pad
         align-self: flex-end
-    @include small-pad
+    @include pad
         display: none
         width: 70%
         padding: 10px
@@ -89,14 +76,14 @@ body
 .item
     margin: $item-m
     position: relative
-    @include big-pad
+    @include pad
         margin: 0 10px
     a
         display: block
         padding: $item_a-p
         line-height: $menu-lh
         position: relative
-        @include small-pad
+        @include pad
             text-align-last: center
             padding: 10px
             color: #fff
@@ -222,32 +209,33 @@ body
     max-width: $web-width
     margin: 0 auto
     padding: $container-p
-    @include phone
+    @include pad
         padding: 80px 12px
 .card-list
     display: flex
     flex-wrap: wrap
     justify-content: space-between
-    @include small-pad
+    @include pad
         display: block
 .card
     width: 49%
     height: auto
     margin-bottom: 80px
-    @include small-pad
+    @include pad
         width: 100%
         margin-bottom: 48px
     img
+        width: 100%
         border: $pic-b
         border-radius: $pic-br
-        @include small-pad
+        @include pad
             border: 0.55px
             border-radius: 4px
     p, h2
         overflow: hidden
         white-space: nowrap
         text-overflow: ellipsis
-        @include small-pad
+        @include pad
             overflow: visible
             white-space: normal
             text-overflow: clip
@@ -281,7 +269,7 @@ body
     padding: $tag-padding
     margin-right: $tag-mr
     border-radius: $tag-br
-    @include small-pad
+    @include pad
         margin-right: 8px
 // 翻頁區域
 .pages
@@ -302,10 +290,10 @@ body
         border-radius: $page-hover-br
 .footer
     height: auto
-    background-image: url(../img/footer-bg-lg.png)
+    background: url('.../img/footer-bg-lg.png')
     background-size: cover
-    @include small-pad
-        background-image: url(../img/footer-bg-sm.png)
+    @include pad
+        background: url('.../img/footer-bg-sm.png')
     &-container
         margin: 0 auto
         padding: $footer-container-p
@@ -313,7 +301,7 @@ body
         display: flex
         justify-content: space-between
         align-items: center
-        @include small-pad
+        @include pad
             padding: 40px 12px
             flex-direction: column
             gap: 40px
@@ -322,8 +310,10 @@ body
     flex-direction: column
     justify-content: space-between
     gap: $contact-g
-    @include small-pad
+    @include pad
         align-items: center
+    &-logo
+        width: 120px
     &-text
         line-height: $contact-text-lh
         color: #3b3b3b

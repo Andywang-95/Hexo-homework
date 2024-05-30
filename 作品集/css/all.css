@@ -66,6 +66,14 @@ body {
   }
 }
 
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5333333333);
+  z-index: 5;
+}
+
 .nav {
   width: 1300px;
   margin: 0 auto;
@@ -86,13 +94,8 @@ body {
 }
 @media (max-width: 767px) {
   .nav {
-    flex-direction: column;
-  }
-}
-@media (max-width: 767px) {
-  .nav {
+    justify-content: flex-end;
     padding: 0 12px;
-    justify-content: space-between;
     align-items: flex-end;
   }
 }
@@ -114,13 +117,7 @@ body {
   font-size: 40px;
 }
 
-.menu-btn {
-  display: none;
-}
 @media (max-width: 767px) {
-  .menu-btn {
-    display: block;
-  }
   .menu-btn:hover {
     color: #919191;
   }
@@ -130,9 +127,6 @@ body {
   }
 }
 
-.close-btn {
-  display: none;
-}
 @media (max-width: 767px) {
   .close-btn {
     background-color: #000;
@@ -152,20 +146,15 @@ body {
 }
 @media (max-width: 767px) {
   .menu {
-    align-self: flex-end;
-  }
-}
-@media (max-width: 767px) {
-  .menu {
-    display: none;
-    width: 70%;
+    display: block;
+    width: calc(100% - 24px);
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.8156862745);
     border-radius: 5px;
     border-top-right-radius: 0;
     position: absolute;
     top: 40px;
-    z-index: 2;
+    z-index: 8;
   }
 }
 
@@ -175,19 +164,20 @@ body {
 }
 @media (max-width: 767px) {
   .item {
-    margin: 0 10px;
+    margin: 0 auto;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }
 .item a {
   display: block;
+  width: auto;
   padding: 4px 8px;
   line-height: 1.5;
   position: relative;
 }
 @media (max-width: 767px) {
   .item a {
-    -moz-text-align-last: center;
-         text-align-last: center;
     padding: 10px;
     color: #fff;
   }
@@ -558,4 +548,8 @@ body {
 }
 .from p {
   color: #fff;
+}
+
+.close_class {
+  display: none;
 }/*# sourceMappingURL=all.css.map */

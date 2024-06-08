@@ -52,10 +52,6 @@ img {
   max-width: 100%;
 }
 
-* {
-  outline: 1px solid red;
-}
-
 html {
   max-width: 1920px;
   margin: 0 auto;

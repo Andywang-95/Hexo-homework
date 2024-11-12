@@ -166,7 +166,6 @@ body {
 @media (max-width: 767px) {
   .item {
     margin: 0 auto;
-    width: -moz-fit-content;
     width: fit-content;
   }
 }
@@ -282,7 +281,6 @@ body {
 
 .home-works-title {
   margin: 120px auto 80px;
-  width: -moz-fit-content;
   width: fit-content;
   font-size: 32px;
   line-height: 1.2;
@@ -468,7 +466,6 @@ body {
 }
 .services-title {
   margin: 0 auto 80px;
-  width: -moz-fit-content;
   width: fit-content;
 }
 
